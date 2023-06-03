@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+</script>
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+</head>
+<body>
+
+<h2>Filtreleme Tablosu</h2>
+<p>Arama yap:</p>  
+<input id="myInput" type="text" placeholder="Ara..">
+<br><br>
+
+<table>
+  <thead>
+  <tr>
+    <th>İsim</th>
+    <th>Soyisim</th>
+    <th>Email</th>
+  </tr>
+  </thead>
+  <tbody id="myTable">
+  <tr>
+    <td>Sefa</td>
+    <td>Yeşilarslan</td>
+    <td>sefayesilarslan@gmail.com</td>
+  </tr>
+  <tr>
+    <td>Ahmet</td>
+    <td>Çalık</td>
+    <td>ahmetcalik@gmail.com</td>
+  </tr>
+  <tr>
+    <td>İbrahim</td>
+    <td>Sehiç</td>
+    <td>ibrahimsehic@gmail.com</td>
+  </tr>
+  <tr>
+    <td>Nejc</td>
+    <td>Skubic</td>
+    <td>nejcskubic@gmail.com</td>
+  </tr>
+  </tbody>
+</table>
+
+</body>
+</html>
